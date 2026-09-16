@@ -1,0 +1,798 @@
+/* =========================================================
+   Kaufpreisaufteilung – Global Styles
+   ========================================================= */
+
+:root {
+    --color-primary: #205743;
+    --color-primary-dark: #174635;
+    --color-primary-light: #eaf2ee;
+
+    --color-background: #f5f7f5;
+    --color-surface: #ffffff;
+    --color-border: #dfe5e1;
+
+    --color-text: #17211d;
+    --color-text-muted: #66736d;
+
+    --color-focus: #3c8065;
+
+    --shadow-card:
+        0 8px 28px rgba(23, 55, 43, 0.06);
+
+    --radius-card: 16px;
+    --radius-input: 8px;
+
+    --content-width: 1030px;
+}
+
+
+/* =========================================================
+   Reset / Basis
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+header {
+    background: var(--color-primary);
+    color: white;
+
+    width: 100%;
+
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+header h1 {
+    width: min(var(--content-width), calc(100% - 40px));
+
+    margin: 0 auto;
+    padding: 24px 0;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   Main Content
+   ========================================================= */
+
+main {
+    width: min(var(--content-width), calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 54px 0 80px;
+}
+
+
+/* =========================================================
+   Page Heading
+   ========================================================= */
+
+main > h2 {
+    position: relative;
+
+    margin: 0 0 52px;
+
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.1;
+    font-weight: 750;
+    letter-spacing: -0.035em;
+}
+
+main > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 4px;
+
+    margin-top: 18px;
+
+    background: var(--color-primary);
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   Form Sections / Cards
+   ========================================================= */
+
+fieldset {
+    position: relative;
+
+    margin: 0 0 38px;
+    padding: 34px 32px 30px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background: var(--color-surface);
+
+    box-shadow: var(--shadow-card);
+}
+
+fieldset:last-of-type {
+    margin-bottom: 42px;
+}
+
+
+/* =========================================================
+   Section Title
+   ========================================================= */
+
+fieldset legend {
+    padding: 0 10px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+fieldset > p {
+    margin: 8px 0 28px;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   Form Layout
+   ========================================================= */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+}
+
+.form-field:last-child {
+    margin-bottom: 0;
+}
+
+
+/*
+   Zwei Spalten für normale Formularfelder.
+
+   Die vorhandene HTML-Struktur enthält die Felder
+   direkt hintereinander innerhalb des fieldsets.
+*/
+
+fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 0;
+}
+
+fieldset legend,
+fieldset > p {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   Labels
+   ========================================================= */
+
+.form-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--color-text);
+
+    font-size: 0.88rem;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   Inputs / Selects
+   ========================================================= */
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d5ddd8;
+    border-radius: var(--radius-input);
+
+    background: #ffffff;
+    color: var(--color-text);
+
+    font: inherit;
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease;
+}
+
+
+/* Placeholder */
+
+.form-field input::placeholder {
+    color: #a0aaa5;
+}
+
+
+/* Select */
+
+.form-field select {
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+/* Hover */
+
+.form-field input:hover,
+.form-field select:hover {
+    border-color: #b9c6bf;
+}
+
+
+/* Focus */
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color: var(--color-focus);
+
+    box-shadow:
+        0 0 0 3px rgba(60, 128, 101, 0.12);
+}
+
+
+/* =========================================================
+   Number Inputs
+   ========================================================= */
+
+.form-field input[type="number"] {
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   Date Input
+   ========================================================= */
+
+.form-field input[type="date"] {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   Units
+   ========================================================= */
+
+.form-field .unit {
+    margin-top: 6px;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   Help Text
+   ========================================================= */
+
+.form-field small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.79rem;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   Required Fields
+   ========================================================= */
+
+.form-field input:required,
+.form-field select:required {
+    background-color: #ffffff;
+}
+
+
+/* =========================================================
+   Button
+   ========================================================= */
+
+button[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 28px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: var(--color-primary);
+    color: #ffffff;
+
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(32, 87, 67, 0.18);
+
+    transition:
+        background-color 0.15s ease,
+        transform 0.1s ease,
+        box-shadow 0.15s ease;
+}
+
+button[type="submit"]:hover {
+    background: var(--color-primary-dark);
+
+    box-shadow:
+        0 6px 16px rgba(32, 87, 67, 0.23);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+
+    box-shadow:
+        0 3px 8px rgba(32, 87, 67, 0.18);
+}
+
+button[type="submit"]:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(60, 128, 101, 0.18),
+        0 4px 12px rgba(32, 87, 67, 0.18);
+}
+
+
+/* =========================================================
+   Responsive – Tablet
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    main {
+        padding-top: 40px;
+    }
+
+    fieldset {
+        grid-template-columns: 1fr;
+
+        padding: 30px 24px 26px;
+    }
+
+    fieldset legend,
+    fieldset > p {
+        grid-column: 1;
+    }
+
+    main > h2 {
+        margin-bottom: 38px;
+    }
+}
+
+
+/* =========================================================
+   Responsive – Mobile
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    header h1 {
+        width: calc(100% - 28px);
+
+        padding: 20px 0;
+
+        font-size: 1.15rem;
+    }
+
+    main {
+        width: calc(100% - 24px);
+
+        padding: 32px 0 60px;
+    }
+
+    main > h2 {
+        margin-bottom: 32px;
+
+        font-size: 2rem;
+    }
+
+    fieldset {
+        margin-bottom: 24px;
+        padding: 26px 18px 22px;
+
+        border-radius: 13px;
+    }
+
+    fieldset legend {
+        font-size: 1.05rem;
+    }
+
+    .form-field {
+        margin-bottom: 20px;
+    }
+
+    .form-field input,
+    .form-field select {
+        min-height: 46px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   Ergebnis-Seite
+   ========================================================= */
+
+.result-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(420px, 1.5fr);
+    gap: 24px;
+
+    margin-top: 36px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   Ergebnis-Karten
+   ========================================================= */
+
+.result-card {
+    background: #ffffff;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-card);
+
+    overflow: hidden;
+
+    align-self: start;
+}
+
+
+/* =========================================================
+   Karten-Kopf
+   ========================================================= */
+
+.result-card-header {
+    padding: 18px 24px;
+
+    background: #fafcfb;
+
+    border-bottom: 1px solid #edf0ee;
+}
+
+.result-card-header h3 {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   Karten-Inhalt
+   ========================================================= */
+
+.result-card-body {
+    padding: 8px 24px 12px;
+}
+
+
+/* =========================================================
+   Ergebnis-Zeilen
+   ========================================================= */
+
+.result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    min-height: 52px;
+
+    border-bottom: 1px solid #edf0ee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item span {
+    color: var(--color-text-muted);
+
+    font-size: 0.92rem;
+}
+
+.result-item strong {
+    color: var(--color-text);
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   Hervorgehobene Werte
+   ========================================================= */
+
+.result-item-highlight {
+    margin: 8px -24px 0;
+    padding: 4px 24px;
+
+    background: var(--color-primary-light);
+
+    border-bottom: none;
+}
+
+.result-item-highlight span {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.result-item-highlight strong {
+    color: var(--color-primary-dark);
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   Sachwert
+   ========================================================= */
+
+/*
+   Der Sachwert soll unter den beiden oberen Bereichen
+   über die gesamte Breite laufen.
+*/
+
+.result-grid .result-card:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   Hauptkarte: Kaufpreisaufteilung
+   ========================================================= */
+
+.result-card-main {
+    grid-column: 1 / -1;
+
+    margin-top: 4px;
+
+    border: 1px solid #c7d9d0;
+
+    box-shadow:
+        0 12px 32px rgba(32, 87, 67, 0.10);
+}
+
+
+/* Kopf der Hauptkarte */
+
+.result-card-header-main {
+    padding: 20px 26px;
+
+    background: var(--color-primary);
+
+    border-bottom: none;
+}
+
+.result-card-header-main h3 {
+    color: #ffffff;
+
+    font-size: 1.15rem;
+}
+
+
+/* =========================================================
+   Kaufpreisaufteilung
+   ========================================================= */
+
+.allocation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.allocation-item {
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 26px;
+}
+
+.allocation-item + .allocation-item {
+    border-left: 1px solid var(--color-border);
+}
+
+.allocation-label {
+    margin-bottom: 8px;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.allocation-value {
+    color: var(--color-primary-dark);
+
+    font-size: 1.65rem;
+    line-height: 1.2;
+
+    font-weight: 750;
+
+    letter-spacing: -0.02em;
+}
+
+.allocation-percent {
+    margin-top: 7px;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+
+.result-actions {
+    margin-top: 32px;
+    margin-bottom: 50px;
+}
+
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 22px;
+
+    border: 1px solid #cbd6d0;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: var(--color-primary-dark);
+
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.1s ease;
+}
+
+.secondary-button:hover {
+    background: var(--color-primary-light);
+    border-color: #b5c8bd;
+}
+
+.secondary-button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-grid .result-card:nth-child(3),
+    .result-card-main {
+        grid-column: auto;
+    }
+
+    .allocation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .allocation-item + .allocation-item {
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .result-item {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 5px;
+
+        padding: 14px 0;
+    }
+
+    .result-item-highlight {
+        padding: 14px 24px;
+    }
+
+    .result-item strong {
+        text-align: left;
+    }
+
+    .allocation-value {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Kaufpreisaufteilung</h2>
+
+<form action="/calculate" method="post">
+
+    {% for section in form_sections %}
+
+        <fieldset>
+
+            <legend>{{ section.title }}</legend>
+
+            {% if section.description %}
+                <p>{{ section.description }}</p>
+            {% endif %}
+
+            {% for field in section.fields %}
+
+                <div class="form-field">
+
+                    <label for="{{ field.name }}">
+                        {{ field.label }}
+                    </label>
+
+                    {% if field.field_type == "select" %}
+
+                        <select
+                            id="{{ field.name }}"
+                            name="{{ field.name }}"
+                            {% if field.required %}required{% endif %}
+                        >
+
+                            <option value="">
+                                Bitte auswählen
+                            </option>
+
+                            {% if field.name == "nhk_code" %}
+
+                                {% for option in nhk_options %}
+                                    <option value="{{ option.value }}">
+                                        {{ option.label }}
+                                    </option>
+                                {% endfor %}
+
+                            {% else %}
+
+                                {% for option in field.options %}
+                                    <option value="{{ option.value }}">
+                                        {{ option.label }}
+                                    </option>
+                                {% endfor %}
+
+                            {% endif %}
+
+                        </select>
+
+                    {% else %}
+
+                        <input
+                            type="{{ field.field_type }}"
+                            id="{{ field.name }}"
+                            name="{{ field.name }}"
+                            placeholder="{{ field.placeholder }}"
+                            step="{{ field.step }}"
+
+                            {% if field.min_value is not none %}
+                                min="{{ field.min_value }}"
+                            {% endif %}
+
+                            {% if field.max_value is not none %}
+                                max="{{ field.max_value }}"
+                            {% endif %}
+
+                            {% if field.required %}
+                                required
+                            {% endif %}
+                        >
+
+                    {% endif %}
+
+                    {% if field.unit %}
+                        <span class="unit">
+                            {{ field.unit }}
+                        </span>
+                    {% endif %}
+
+                    {% if field.help_text %}
+                        <small>
+                            {{ field.help_text }}
+                        </small>
+                    {% endif %}
+
+                </div>
+
+            {% endfor %}
+
+        </fieldset>
+
+    {% endfor %}
+
+    <button type="submit">
+        Berechnen
+    </button>
+
+</form>
+
+{% endblock %}

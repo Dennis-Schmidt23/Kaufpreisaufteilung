@@ -1,11 +1,17 @@
+from pathlib import Path
+
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
-app = FastAPI(title="Kaufpreisaufteilung")
+from app.routes.web import router
 
-@app.get("/", response_class=HTMLResponse)
-def index():
-    return """
-    <h1>Kaufpreisaufteilung nach BMF</h1>
-    <p>Die Anwendung läuft erfolgreich.</p>
-    """
+BASE_DIR = Path(__file__).resolve().parent
+
+app = FastAPI(
+    title="Kaufpreisaufteilung",
+    version="0.1.0",
+)
+
+app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
+
+app.include_router(router)

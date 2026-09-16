@@ -1,0 +1,50 @@
+{
+    "description": "Altbau ohne Modernisierung",
+    "source": "BMF Arbeitshilfe März 2026",
+    "worksheet": "KPA",
+    "input": {
+        "kaufvertrag": {
+            "kaufpreis": 420000,
+            "datum": "2024-01-01"
+        },
+        "grundstueck": {
+            "flaeche_1": 550,
+            "bodenrichtwert_1": 320
+        },
+        "gebaeude": {
+            "baujahr": 1985,
+            "garagenstellplaetze": 0,
+            "tiefgaragenstellplaetze": 0
+        },
+        "nhk_code": "1.01",
+        "standardstufe": 3,
+        "bruttogrundflaeche": 180,
+        "wohnflaeche": 180,
+        "gesamtnutzungsdauer": 80,
+        "dach": "ja",
+        "fenster": "ja",
+        "leitungen": "ja",
+        "heizung": "ja",
+        "waermedaemmung": "ja",
+        "baeder": "ja",
+        "innenausbau": "ja",
+        "grundriss": "ja"
+    },
+    "expected": {
+        "bodenwert": 176000.0,
+        "normalherstellungskosten": 1531.0,
+        "gebaeudesachwert": 124200.0,
+        "modernisierungspunkte": 8.0,
+        "fiktives_baujahr": 1979,
+        "restnutzungsdauer": 35,
+        "alterswertminderung": 0.4375,
+        "garagenwert": 0.0,
+        "vorlaeufiger_sachwert": 300200.0,
+        "marktangepasster_sachwert": 300200.0,
+        "sachwertfaktor": 1.0,
+        "bodenanteil": 246204.0,
+        "gebaeudeanteil": 173796.0,
+        "bodenanteil_prozent": 58.62,
+        "gebaeudeanteil_prozent": 41.38
+    }
+}

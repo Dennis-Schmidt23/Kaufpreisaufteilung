@@ -1,0 +1,47 @@
+{
+    "description": "EFH mit Einzelgarage",
+    "source": "BMF Arbeitshilfe März 2026",
+    "worksheet": "KPA",
+    "excel_cells": {
+        "garagenwert": "Kxx",
+        "gebaeudesachwert": "Kyy",
+        "marktangepasster_sachwert": "Kzz"
+    },
+    "input": {
+        "kaufvertrag": {
+            "kaufpreis": 550000,
+            "datum": "2024-01-01"
+        },
+        "grundstueck": {
+            "flaeche_1": 650,
+            "bodenrichtwert_1": 350
+        },
+        "gebaeude": {
+            "baujahr": 2005,
+            "garagenstellplaetze": 1,
+            "tiefgaragenstellplaetze": 0
+        },
+        "nhk_code": "1.01",
+        "standardstufe": 3,
+        "bruttogrundflaeche": 180.0,
+        "wohnflaeche": 180.0,
+        "gesamtnutzungsdauer": 80
+    },
+    "expected": {
+        "bodenwert": 227500.0,
+        "normalherstellungskosten": 1531.0,
+        "gebaeudesachwert": 85140.0,
+        "modernisierungspunkte": 0.0,
+        "fiktives_baujahr": 1947,
+        "restnutzungsdauer": 3,
+        "alterswertminderung": 0.3,
+        "garagenwert": 6241.0,
+        "vorlaeufiger_sachwert": 318881.0,
+        "marktangepasster_sachwert": 318881.0,
+        "sachwertfaktor": 1.0,
+        "bodenanteil": 392370.0,
+        "gebaeudeanteil": 157630.0,
+        "bodenanteil_prozent": 71.34,
+        "gebaeudeanteil_prozent": 28.66
+    }
+}

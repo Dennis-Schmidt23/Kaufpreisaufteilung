@@ -1,0 +1,44 @@
+{
+    "description": "Grundstück mit mehreren Bodenrichtwerten",
+    "source": "BMF Arbeitshilfe März 2026",
+    "worksheet": "KPA",
+    "input": {
+        "kaufvertrag": {
+            "kaufpreis": 500000,
+            "datum": "2024-01-01"
+        },
+        "grundstueck": {
+            "flaeche_1": 300,
+            "bodenrichtwert_1": 400,
+            "flaeche_2": 200,
+            "bodenrichtwert_2": 250
+        },
+        "gebaeude": {
+            "baujahr": 2000,
+            "garagenstellplaetze": 0,
+            "tiefgaragenstellplaetze": 0
+        },
+        "nhk_code": "1.01",
+        "standardstufe": 3,
+        "bruttogrundflaeche": 190.0,
+        "wohnflaeche": 190.0,
+        "gesamtnutzungsdauer": 80
+    },
+    "expected": {
+        "bodenwert": 170000.0,
+        "normalherstellungskosten": 1531.0,
+        "gebaeudesachwert": 89870.0,
+        "modernisierungspunkte": 0.0,
+        "fiktives_baujahr": 1958,
+        "restnutzungsdauer": 14,
+        "alterswertminderung": 0.3,
+        "garagenwert": 0.0,
+        "vorlaeufiger_sachwert": 259870.0,
+        "marktangepasster_sachwert": 259870.0,
+        "sachwertfaktor": 1.0,
+        "bodenanteil": 327050.0,
+        "gebaeudeanteil": 172950.0,
+        "bodenanteil_prozent": 65.41,
+        "gebaeudeanteil_prozent": 34.59
+    }
+}

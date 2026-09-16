@@ -1,0 +1,42 @@
+{
+    "description": "Neubau EFH",
+    "source": "BMF Arbeitshilfe März 2026",
+    "worksheet": "KPA",
+    "input": {
+        "kaufvertrag": {
+            "kaufpreis": 500000,
+            "datum": "2024-01-01"
+        },
+        "grundstueck": {
+            "flaeche_1": 600,
+            "bodenrichtwert_1": 350
+        },
+        "gebaeude": {
+            "baujahr": 2000,
+            "garagenstellplaetze": 0,
+            "tiefgaragenstellplaetze": 0
+        },
+        "nhk_code": "1.01",
+        "standardstufe": 3,
+        "bruttogrundflaeche": 190.0,
+        "wohnflaeche": 190.0,
+        "gesamtnutzungsdauer": 80
+    },
+    "expected": {
+        "bodenwert": 210000.0,
+        "normalherstellungskosten": 1531.0,
+        "gebaeudesachwert": 89870.0,
+        "modernisierungspunkte": 0.0,
+        "fiktives_baujahr": 1958,
+        "restnutzungsdauer": 14,
+        "alterswertminderung": 0.3,
+        "garagenwert": 0.0,
+        "vorlaeufiger_sachwert": 299870.0,
+        "marktangepasster_sachwert": 299870.0,
+        "sachwertfaktor": 1.0,
+        "bodenanteil": 350150.0,
+        "gebaeudeanteil": 149850.0,
+        "bodenanteil_prozent": 70.03,
+        "gebaeudeanteil_prozent": 29.97
+    }
+}

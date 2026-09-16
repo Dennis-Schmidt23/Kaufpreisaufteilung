@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Ergebnis der Kaufpreisaufteilung</h2>
+
+<div class="result-grid">
+
+    <!-- Grund und Boden -->
+    <section class="result-card">
+
+        <div class="result-card-header">
+            <h3>Grund und Boden</h3>
+        </div>
+
+        <div class="result-card-body">
+
+            <div class="result-item result-item-highlight">
+                <span>Bodenwert</span>
+                <strong>{{ result.bodenwert }} €</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Gebäude -->
+    <section class="result-card">
+
+        <div class="result-card-header">
+            <h3>Gebäude</h3>
+        </div>
+
+        <div class="result-card-body">
+
+            <div class="result-item">
+                <span>Normalherstellungskosten</span>
+                <strong>{{ result.normalherstellungskosten }} €/m²</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Fiktives Baujahr</span>
+                <strong>{{ result.fiktives_baujahr }}</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Restnutzungsdauer</span>
+                <strong>{{ result.restnutzungsdauer }} Jahre</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Alterswertminderung</span>
+                <strong>{{ result.alterswertminderung }}</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Garagenwert</span>
+                <strong>{{ result.garagenwert }} €</strong>
+            </div>
+
+            <div class="result-item result-item-highlight">
+                <span>Gebäudesachwert</span>
+                <strong>{{ result.gebaeudesachwert }} €</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Sachwert -->
+    <section class="result-card">
+
+        <div class="result-card-header">
+            <h3>Sachwert</h3>
+        </div>
+
+        <div class="result-card-body">
+
+            <div class="result-item">
+                <span>Vorläufiger Sachwert</span>
+                <strong>{{ result.vorlaeufiger_sachwert }} €</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Sachwertfaktor</span>
+                <strong>{{ result.sachwertfaktor }}</strong>
+            </div>
+
+            <div class="result-item result-item-highlight">
+                <span>Marktangepasster Sachwert</span>
+                <strong>{{ result.marktangepasster_sachwert }} €</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Kaufpreisaufteilung -->
+    <section class="result-card result-card-main">
+
+        <div class="result-card-header result-card-header-main">
+            <h3>Kaufpreisaufteilung</h3>
+        </div>
+
+        <div class="allocation-grid">
+
+            <div class="allocation-item">
+
+                <span class="allocation-label">
+                    Grund und Boden
+                </span>
+
+                <strong class="allocation-value">
+                    {{ result.bodenanteil }} €
+                </strong>
+
+                <span class="allocation-percent">
+                    {{ result.bodenanteil_prozent }} %
+                </span>
+
+            </div>
+
+
+            <div class="allocation-item">
+
+                <span class="allocation-label">
+                    Gebäude
+                </span>
+
+                <strong class="allocation-value">
+                    {{ result.gebaeudeanteil }} €
+                </strong>
+
+                <span class="allocation-percent">
+                    {{ result.gebaeudeanteil_prozent }} %
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<div class="result-actions">
+
+    <a href="/" class="secondary-button">
+        Neue Berechnung
+    </a>
+
+</div>
+
+{% endblock %}
