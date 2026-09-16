@@ -59,7 +59,7 @@ Für die lokale Entwicklung werden benötigt:
 Repository klonen:
 
 ```bash
-git clone <URL-DES-GITHUB-REPOSITORIES>
+git clone https://github.com/Dennis-Schmidt23/Kaufpreisaufteilung
 cd Kaufpreisaufteilung
 ```
 
@@ -103,38 +103,6 @@ pytest
 ```
 
 Das Projekt enthält sowohl Unit-Tests für einzelne Berechnungskomponenten als auch Integrationstests für die vollständige Berechnungskette und die Webanwendung.
-
-## Projektstruktur
-
-Kaufpreisaufteilung/
-│
-├── app/
-│   ├── calculator/
-│   │   ├── calculations/
-│   │   ├── data/
-│   │   ├── enums/
-│   │   └── engine.py
-│   │
-│   ├── models/
-│   ├── routes/
-│   ├── static/
-│   ├── templates/
-│   ├── forms.py
-│   ├── form_mapper.py
-│   └── main.py
-│
-├── data/
-│
-├── docs/
-│
-├── scripts/
-│
-├── tests/
-│   └── reference_cases/
-│
-├── pyproject.toml
-├── requirements.txt
-└── README.md
 
 ## Berechnungsgrundlage
 
